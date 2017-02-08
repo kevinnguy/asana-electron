@@ -1,0 +1,35 @@
+{
+  "name": "trello",
+  "productName": "Trello",
+  "version": "1.0.0",
+  "description": "Trello app on Electron",
+  "license": "MIT",
+  "repository": "kevinnguy/trello-electron",
+  "author": {
+    "name": "Kevin Nguy"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=darwin --arch=x64 --icon=static/Icon.icns --app-version=$npm_package_version && cd dist/Trello-darwin-x64 && zip -ryXq9 ../Trello-osx-${npm_package_version}.zip Trello.app"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1",
+    "electron-context-menu": "^0.6.0",
+    "electron-debug": "^1.0.0",
+    "electron-dl": "^1.0.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "electron": "^1.4.10",
+    "electron-packager": "^8.0.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
